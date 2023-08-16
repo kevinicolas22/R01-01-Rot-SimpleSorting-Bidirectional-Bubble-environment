@@ -10,6 +10,9 @@ import sorting.AbstractSorting;
 import sorting.simpleSorting.BubbleSort;
 import sorting.simpleSorting.InsertionSort;
 import sorting.simpleSorting.SelectionSort;
+import sorting.variationsOfBubblesort.BidirectionalBubbleSort;
+import sorting.variationsOfBubblesort.RecursiveBubbleSort;
+import sorting.variationsOfSelectionsort.RecursiveSelectionSort;
 
 public class StudentSortingTest {
 
@@ -41,7 +44,7 @@ public class StudentSortingTest {
 	private void getImplementation() {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// colocar null quando acabar os testes "this.implementation = null;""
-		this.implementation = new SelectionSort<>(); //mudar nome "this.implementation = new NomeDaClasse<>();"" 
+		this.implementation = null; //mudar nome "this.implementation = new NomeDaClasse<>();"" 
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -93,12 +96,12 @@ public class StudentSortingTest {
 
 	@Test
 	public void testSort04() {
-		genericTest(vetorValoresIguais);
 	}
 
 	@Test
 	public void testSort05() {
-		genericTest(vetorValoresRepetidos);
+		genericTest(vetorValoresRepetidos);		genericTest(vetorValoresIguais);
+
 	}
 
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
