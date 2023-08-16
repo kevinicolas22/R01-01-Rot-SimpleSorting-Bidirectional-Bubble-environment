@@ -44,7 +44,7 @@ public class StudentSortingTest {
 	private void getImplementation() {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// colocar null quando acabar os testes "this.implementation = null;""
-		this.implementation = null; //mudar nome "this.implementation = new NomeDaClasse<>();"" 
+		this.implementation = new RecursiveBubbleSort<>(); //mudar nome "this.implementation = new NomeDaClasse<>();"" 
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -100,7 +100,8 @@ public class StudentSortingTest {
 
 	@Test
 	public void testSort05() {
-		genericTest(vetorValoresRepetidos);		genericTest(vetorValoresIguais);
+		genericTest(vetorValoresRepetidos);		
+		genericTest(vetorValoresIguais);
 
 	}
 

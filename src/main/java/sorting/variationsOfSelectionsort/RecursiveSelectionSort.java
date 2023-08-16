@@ -19,19 +19,26 @@ public class RecursiveSelectionSort<T extends Comparable<T>> extends
 		if (leftIndex >= rightIndex) {
 			return;
 		}
-
-		int minIndex = leftIndex;
-		for (int i = leftIndex + 1; i <= rightIndex; i++) {
-			if (array[i].compareTo(array[minIndex]) < 0) {
-				minIndex = i;
-			}
-		}
-
+	
+		int minIndex = findMinIndex(array, leftIndex + 1, rightIndex, leftIndex);
+	
 		Util.swap(array, leftIndex, minIndex);
-
+	
 		sort(array, leftIndex + 1, rightIndex);
-
 	}
+	
+	private int findMinIndex(T[] array, int currentIndex, int rightIndex, int minIndex) {
+		if (currentIndex > rightIndex) {
+			return minIndex;
+		}
+	
+		if (array[currentIndex].compareTo(array[minIndex]) < 0) {
+			minIndex = currentIndex;
+		}
+	
+		return findMinIndex(array, currentIndex + 1, rightIndex, minIndex);
+	}
+	
 
 
 }
