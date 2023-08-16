@@ -19,6 +19,9 @@ public class RecursiveBubbleSort<T extends Comparable<T>> extends
 		if (array == null || array.length == 0 || leftIndex < 0 || rightIndex < 0) {
 			return; // Retorna caso o array seja nulo, tenha tamanho 0 ou os índices sejam negativos
 		}
+		if (array == null || array.length == 0 || leftIndex < 0 || rightIndex < 0) {
+			return; // Retorna caso o array seja nulo, tenha tamanho 0 ou os índices sejam negativos
+		}
 		
 		if (rightIndex > leftIndex) {
 			if(array[leftIndex].compareTo(array[leftIndex + 1])> 0){
