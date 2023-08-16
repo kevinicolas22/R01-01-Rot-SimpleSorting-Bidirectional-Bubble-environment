@@ -9,9 +9,24 @@ import sorting.AbstractSorting;
  */
 public class BubbleSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
-	@Override
-	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not Implemented yet!");
-	}
+    @Override
+    public void sort(T[] array, int leftIndex, int rightIndex) {
+        boolean troca = true;
+        for (int i = leftIndex; i < rightIndex && troca; i++) {
+            troca = false;
+            for (int j = leftIndex; j < rightIndex - i; j++) {
+                if (array[j].compareTo(array[j + 1]) > 0) {
+                    swap(array, j, j + 1);
+                    troca = true;
+                }
+            }
+        }
+    }
+    
+    private void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
+
